@@ -9,7 +9,7 @@ namespace Акции
         {
             InitializeComponent();
         }
-
+        
         //кол-во денег
         int money = 1000;
 
