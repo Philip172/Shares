@@ -9,7 +9,6 @@ namespace Акции
         {
             InitializeComponent();
         }
-        
         //кол-во денег
         int money = 1000;
 
@@ -232,6 +231,8 @@ namespace Акции
             }
             catch { }
         }
+
+       
 
         private void next_day_Tick(object sender, EventArgs e)
         {

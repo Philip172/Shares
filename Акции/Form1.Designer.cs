@@ -41,6 +41,8 @@ namespace Акции
             this.tb_cost_chalk = new System.Windows.Forms.TextBox();
             this.tb_have_chalk = new System.Windows.Forms.TextBox();
             this.GB_chalk = new System.Windows.Forms.GroupBox();
+            this.tb_almoney_chalk = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_saleAll_chalk = new System.Windows.Forms.Button();
             this.btn_buyAll_chalk = new System.Windows.Forms.Button();
             this.label_name_chalk = new System.Windows.Forms.Label();
@@ -50,7 +52,9 @@ namespace Акции
             this.label6 = new System.Windows.Forms.Label();
             this.events = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_almoney_gold = new System.Windows.Forms.TextBox();
             this.btn_saleAll_gold = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.btn_buyAll_gold = new System.Windows.Forms.Button();
             this.label_name_gold = new System.Windows.Forms.Label();
             this.btn_buy_gold = new System.Windows.Forms.Button();
@@ -61,10 +65,6 @@ namespace Акции
             this.tb_sale_gold = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_have_gold = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_almoney_chalk = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tb_almoney_gold = new System.Windows.Forms.TextBox();
             this.GB_chalk.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -177,6 +177,22 @@ namespace Акции
             this.GB_chalk.TabIndex = 5;
             this.GB_chalk.TabStop = false;
             // 
+            // tb_almoney_chalk
+            // 
+            this.tb_almoney_chalk.Location = new System.Drawing.Point(456, 55);
+            this.tb_almoney_chalk.Name = "tb_almoney_chalk";
+            this.tb_almoney_chalk.Size = new System.Drawing.Size(244, 38);
+            this.tb_almoney_chalk.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(364, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(336, 31);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "стоимость ваших активов";
+            // 
             // btn_saleAll_chalk
             // 
             this.btn_saleAll_chalk.Location = new System.Drawing.Point(432, 279);
@@ -264,6 +280,13 @@ namespace Акции
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // tb_almoney_gold
+            // 
+            this.tb_almoney_gold.Location = new System.Drawing.Point(459, 54);
+            this.tb_almoney_gold.Name = "tb_almoney_gold";
+            this.tb_almoney_gold.Size = new System.Drawing.Size(244, 38);
+            this.tb_almoney_gold.TabIndex = 8;
+            // 
             // btn_saleAll_gold
             // 
             this.btn_saleAll_gold.Location = new System.Drawing.Point(432, 279);
@@ -273,6 +296,15 @@ namespace Акции
             this.btn_saleAll_gold.Text = "продать всё";
             this.btn_saleAll_gold.UseVisualStyleBackColor = true;
             this.btn_saleAll_gold.Click += new System.EventHandler(this.btn_saleAll_gold_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(367, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(336, 31);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "стоимость ваших активов";
             // 
             // btn_buyAll_gold
             // 
@@ -362,38 +394,6 @@ namespace Акции
             this.tb_have_gold.Name = "tb_have_gold";
             this.tb_have_gold.Size = new System.Drawing.Size(262, 41);
             this.tb_have_gold.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(336, 31);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "стоимость ваших активов";
-            // 
-            // tb_almoney_chalk
-            // 
-            this.tb_almoney_chalk.Location = new System.Drawing.Point(456, 55);
-            this.tb_almoney_chalk.Name = "tb_almoney_chalk";
-            this.tb_almoney_chalk.Size = new System.Drawing.Size(244, 38);
-            this.tb_almoney_chalk.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(367, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(336, 31);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "стоимость ваших активов";
-            // 
-            // tb_almoney_gold
-            // 
-            this.tb_almoney_gold.Location = new System.Drawing.Point(459, 54);
-            this.tb_almoney_gold.Name = "tb_almoney_gold";
-            this.tb_almoney_gold.Size = new System.Drawing.Size(244, 38);
-            this.tb_almoney_gold.TabIndex = 8;
             // 
             // Shares_gameForm
             // 
