@@ -1,7 +1,7 @@
 ﻿
 namespace Акции
 {
-    partial class Form1
+    partial class Shares_gameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,11 +41,11 @@ namespace Акции
             this.tb_cost_chalk = new System.Windows.Forms.TextBox();
             this.tb_have_chalk = new System.Windows.Forms.TextBox();
             this.GB_chalk = new System.Windows.Forms.GroupBox();
-            this.label_name_chalk = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.next_day = new System.Windows.Forms.Timer(this.components);
-            this.btn_buyAll_chalk = new System.Windows.Forms.Button();
             this.btn_saleAll_chalk = new System.Windows.Forms.Button();
+            this.btn_buyAll_chalk = new System.Windows.Forms.Button();
+            this.label_name_chalk = new System.Windows.Forms.Label();
+            this.reload_textbox = new System.Windows.Forms.Timer(this.components);
+            this.next_day = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.events = new System.Windows.Forms.Timer(this.components);
@@ -61,6 +61,10 @@ namespace Акции
             this.tb_sale_gold = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_have_gold = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tb_almoney_chalk = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_almoney_gold = new System.Windows.Forms.TextBox();
             this.GB_chalk.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +158,8 @@ namespace Акции
             // 
             // GB_chalk
             // 
+            this.GB_chalk.Controls.Add(this.tb_almoney_chalk);
+            this.GB_chalk.Controls.Add(this.label4);
             this.GB_chalk.Controls.Add(this.btn_saleAll_chalk);
             this.GB_chalk.Controls.Add(this.btn_buyAll_chalk);
             this.GB_chalk.Controls.Add(this.label_name_chalk);
@@ -167,30 +173,19 @@ namespace Акции
             this.GB_chalk.Controls.Add(this.tb_have_chalk);
             this.GB_chalk.Location = new System.Drawing.Point(79, 185);
             this.GB_chalk.Name = "GB_chalk";
-            this.GB_chalk.Size = new System.Drawing.Size(629, 358);
+            this.GB_chalk.Size = new System.Drawing.Size(709, 358);
             this.GB_chalk.TabIndex = 5;
             this.GB_chalk.TabStop = false;
             // 
-            // label_name_chalk
+            // btn_saleAll_chalk
             // 
-            this.label_name_chalk.AutoSize = true;
-            this.label_name_chalk.Location = new System.Drawing.Point(241, 21);
-            this.label_name_chalk.Name = "label_name_chalk";
-            this.label_name_chalk.Size = new System.Drawing.Size(66, 31);
-            this.label_name_chalk.TabIndex = 5;
-            this.label_name_chalk.Text = "Мел";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // next_day
-            // 
-            this.next_day.Enabled = true;
-            this.next_day.Interval = 1;
-            this.next_day.Tick += new System.EventHandler(this.next_day_Tick);
+            this.btn_saleAll_chalk.Location = new System.Drawing.Point(432, 279);
+            this.btn_saleAll_chalk.Name = "btn_saleAll_chalk";
+            this.btn_saleAll_chalk.Size = new System.Drawing.Size(187, 46);
+            this.btn_saleAll_chalk.TabIndex = 6;
+            this.btn_saleAll_chalk.Text = "продать всё";
+            this.btn_saleAll_chalk.UseVisualStyleBackColor = true;
+            this.btn_saleAll_chalk.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_buyAll_chalk
             // 
@@ -202,15 +197,26 @@ namespace Акции
             this.btn_buyAll_chalk.UseVisualStyleBackColor = true;
             this.btn_buyAll_chalk.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btn_saleAll_chalk
+            // label_name_chalk
             // 
-            this.btn_saleAll_chalk.Location = new System.Drawing.Point(432, 279);
-            this.btn_saleAll_chalk.Name = "btn_saleAll_chalk";
-            this.btn_saleAll_chalk.Size = new System.Drawing.Size(187, 46);
-            this.btn_saleAll_chalk.TabIndex = 6;
-            this.btn_saleAll_chalk.Text = "продать всё";
-            this.btn_saleAll_chalk.UseVisualStyleBackColor = true;
-            this.btn_saleAll_chalk.Click += new System.EventHandler(this.button4_Click);
+            this.label_name_chalk.AutoSize = true;
+            this.label_name_chalk.Location = new System.Drawing.Point(241, 21);
+            this.label_name_chalk.Name = "label_name_chalk";
+            this.label_name_chalk.Size = new System.Drawing.Size(66, 31);
+            this.label_name_chalk.TabIndex = 5;
+            this.label_name_chalk.Text = "Мел";
+            // 
+            // reload_textbox
+            // 
+            this.reload_textbox.Enabled = true;
+            this.reload_textbox.Interval = 1;
+            this.reload_textbox.Tick += new System.EventHandler(this.timer_reload_tick);
+            // 
+            // next_day
+            // 
+            this.next_day.Enabled = true;
+            this.next_day.Interval = 3800;
+            this.next_day.Tick += new System.EventHandler(this.next_day_Tick);
             // 
             // label5
             // 
@@ -224,10 +230,12 @@ namespace Акции
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(714, 234);
+            this.label6.Location = new System.Drawing.Point(805, 236);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 31);
+            this.label6.Size = new System.Drawing.Size(29, 31);
             this.label6.TabIndex = 6;
+            this.label6.Text = "_";
+            this.label6.Visible = false;
             // 
             // events
             // 
@@ -237,7 +245,9 @@ namespace Акции
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tb_almoney_gold);
             this.groupBox1.Controls.Add(this.btn_saleAll_gold);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btn_buyAll_gold);
             this.groupBox1.Controls.Add(this.label_name_gold);
             this.groupBox1.Controls.Add(this.btn_buy_gold);
@@ -250,7 +260,7 @@ namespace Акции
             this.groupBox1.Controls.Add(this.tb_have_gold);
             this.groupBox1.Location = new System.Drawing.Point(79, 560);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(629, 358);
+            this.groupBox1.Size = new System.Drawing.Size(709, 358);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -262,6 +272,7 @@ namespace Акции
             this.btn_saleAll_gold.TabIndex = 6;
             this.btn_saleAll_gold.Text = "продать всё";
             this.btn_saleAll_gold.UseVisualStyleBackColor = true;
+            this.btn_saleAll_gold.Click += new System.EventHandler(this.btn_saleAll_gold_Click);
             // 
             // btn_buyAll_gold
             // 
@@ -271,6 +282,7 @@ namespace Акции
             this.btn_buyAll_gold.TabIndex = 6;
             this.btn_buyAll_gold.Text = "купить всё";
             this.btn_buyAll_gold.UseVisualStyleBackColor = true;
+            this.btn_buyAll_gold.Click += new System.EventHandler(this.btn_buyAll_gold_Click);
             // 
             // label_name_gold
             // 
@@ -289,6 +301,7 @@ namespace Акции
             this.btn_buy_gold.TabIndex = 4;
             this.btn_buy_gold.Text = "купить";
             this.btn_buy_gold.UseVisualStyleBackColor = true;
+            this.btn_buy_gold.Click += new System.EventHandler(this.btn_buy_gold_Click);
             // 
             // btn_sale_gold
             // 
@@ -298,6 +311,7 @@ namespace Акции
             this.btn_sale_gold.TabIndex = 4;
             this.btn_sale_gold.Text = "продать";
             this.btn_sale_gold.UseVisualStyleBackColor = true;
+            this.btn_sale_gold.Click += new System.EventHandler(this.btn_sale_gold_Click);
             // 
             // tb_buy_gold
             // 
@@ -349,7 +363,39 @@ namespace Акции
             this.tb_have_gold.Size = new System.Drawing.Size(262, 41);
             this.tb_have_gold.TabIndex = 2;
             // 
-            // Form1
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(364, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(336, 31);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "стоимость ваших активов";
+            // 
+            // tb_almoney_chalk
+            // 
+            this.tb_almoney_chalk.Location = new System.Drawing.Point(456, 55);
+            this.tb_almoney_chalk.Name = "tb_almoney_chalk";
+            this.tb_almoney_chalk.Size = new System.Drawing.Size(244, 38);
+            this.tb_almoney_chalk.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(367, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(336, 31);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "стоимость ваших активов";
+            // 
+            // tb_almoney_gold
+            // 
+            this.tb_almoney_gold.Location = new System.Drawing.Point(459, 54);
+            this.tb_almoney_gold.Name = "tb_almoney_gold";
+            this.tb_almoney_gold.Size = new System.Drawing.Size(244, 38);
+            this.tb_almoney_gold.TabIndex = 8;
+            // 
+            // Shares_gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -362,8 +408,8 @@ namespace Акции
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Shares_gameForm";
+            this.Text = "Shares";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.GB_chalk.ResumeLayout(false);
             this.GB_chalk.PerformLayout();
@@ -388,7 +434,7 @@ namespace Акции
         private System.Windows.Forms.TextBox tb_have_chalk;
         private System.Windows.Forms.GroupBox GB_chalk;
         private System.Windows.Forms.Label label_name_chalk;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer reload_textbox;
         private System.Windows.Forms.Timer next_day;
         private System.Windows.Forms.Button btn_saleAll_chalk;
         private System.Windows.Forms.Button btn_buyAll_chalk;
@@ -407,6 +453,10 @@ namespace Акции
         private System.Windows.Forms.TextBox tb_sale_gold;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_have_gold;
+        private System.Windows.Forms.TextBox tb_almoney_chalk;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_almoney_gold;
+        private System.Windows.Forms.Label label7;
     }
 }
 
